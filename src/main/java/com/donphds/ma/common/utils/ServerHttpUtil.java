@@ -1,21 +1,20 @@
 package com.donphds.ma.common.utils;
 
 import cn.hutool.core.net.NetUtil;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.web.server.ServerWebExchange;
 
 import java.net.InetSocketAddress;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * @Author: tplentiful
- * @Since: 1.0
- **/
 @Slf4j
+@UtilityClass
 public class ServerHttpUtil {
     public static void setResHeader(ServerHttpResponse response, String key, String value) {
         HttpHeaders headers = response.getHeaders();
